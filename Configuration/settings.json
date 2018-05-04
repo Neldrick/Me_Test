@@ -1,0 +1,15 @@
+{
+    "Markets":[
+      { "name": "BTCUSD",
+        "stock":"BTC",
+        "money":"USD",
+        "min_price": "0.5"
+      },
+      { "name": "ETHUSD",
+        "stock":"ETH",
+        "money":"USD",
+        "min_price": "0.1"
+      }
+   ],
+   "Test":"ddd"
+}

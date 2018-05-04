@@ -1,0 +1,10 @@
+/home/neldrick/MatchingEngine/bin/Debug/netcoreapp2.0/MatchingEngine.deps.json
+/home/neldrick/MatchingEngine/bin/Debug/netcoreapp2.0/MatchingEngine.runtimeconfig.json
+/home/neldrick/MatchingEngine/bin/Debug/netcoreapp2.0/MatchingEngine.runtimeconfig.dev.json
+/home/neldrick/MatchingEngine/bin/Debug/netcoreapp2.0/MatchingEngine.dll
+/home/neldrick/MatchingEngine/bin/Debug/netcoreapp2.0/MatchingEngine.pdb
+/home/neldrick/MatchingEngine/obj/Debug/netcoreapp2.0/MatchingEngine.csproj.CoreCompileInputs.cache
+/home/neldrick/MatchingEngine/obj/Debug/netcoreapp2.0/MatchingEngine.AssemblyInfoInputs.cache
+/home/neldrick/MatchingEngine/obj/Debug/netcoreapp2.0/MatchingEngine.AssemblyInfo.cs
+/home/neldrick/MatchingEngine/obj/Debug/netcoreapp2.0/MatchingEngine.dll
+/home/neldrick/MatchingEngine/obj/Debug/netcoreapp2.0/MatchingEngine.pdb
