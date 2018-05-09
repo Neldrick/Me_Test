@@ -10,6 +10,7 @@ using MatchingEngine.Modules.DataType;
 
 namespace MatchingEngine.Controllers
 {
+    
     [Route("api/[controller]")]
     public class MarketController : Controller
     {
@@ -31,14 +32,41 @@ namespace MatchingEngine.Controllers
             //detail: true , false
             string test = _config["Test"];
             Market[] marketsArray = _config.GetSection("Markets").Get<Market[]>();
-           
-            List<string> resultList = new List<string>();
-            foreach (Market m in marketsArray)
-            {
-                resultList.Add(m.name);
+             List<string> resultList = new List<string>();
+            switch(type){
+                case "all":
+                    if(detail){
+                        return new JsonResult(marketsArray);
+                    }
+                    else{
+                         foreach (Market m in marketsArray)
+                        {
+                            resultList.Add(m.name);
+                        }
+                        return  new JsonResult(resultList);
+                    }                
+                case "first":
+                    if(detail){
+                        return new JsonResult(marketsArray[0]);
+                    }
+                    else{
+                        return new JsonResult(marketsArray[0].name);
+                    }
+                case "last":
+                    if(detail){
+                        return new JsonResult(marketsArray[marketsArray.Length-1]);
+                    }
+                    else{
+                        return new JsonResult(marketsArray[marketsArray.Length-1].name);
+                    }
+                default:
+                    break;
             }
+           
+           
             return new JsonResult(resultList);
         }
+       
 
     }
 }
