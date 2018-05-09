@@ -29,7 +29,7 @@ namespace MatchingEngine.Modules.Helper
 
             var prepared = LuaScript.Prepare(Script);
             RedisResult result = db.ScriptEvaluate(prepared);
-            //check result
+            //check result test
 
         }
 
