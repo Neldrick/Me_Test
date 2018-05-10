@@ -7,6 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Configuration.Binder;
 using Jil;
 using MatchingEngine.Modules.DataType;
+using MatchingEngine.Modules.Helper;
 
 namespace MatchingEngine.Controllers
 {
@@ -30,16 +31,15 @@ namespace MatchingEngine.Controllers
         {
             //type :all,first,last, 
             //detail: true , false
-            string test = _config["Test"];
-            Market[] marketsArray = _config.GetSection("Markets").Get<Market[]>();
-             List<string> resultList = new List<string>();
+            List<Market> markets = SettingHelper.markets;
+            List<string> resultList = new List<string>();
             switch(type){
                 case "all":
                     if(detail){
-                        return new JsonResult(marketsArray);
+                        return new JsonResult(markets);
                     }
                     else{
-                         foreach (Market m in marketsArray)
+                         foreach (Market m in markets)
                         {
                             resultList.Add(m.name);
                         }
@@ -47,17 +47,17 @@ namespace MatchingEngine.Controllers
                     }                
                 case "first":
                     if(detail){
-                        return new JsonResult(marketsArray[0]);
+                        return new JsonResult(markets.First());
                     }
                     else{
-                        return new JsonResult(marketsArray[0].name);
+                        return new JsonResult(markets[0].name);
                     }
                 case "last":
                     if(detail){
-                        return new JsonResult(marketsArray[marketsArray.Length-1]);
+                        return new JsonResult(markets.Last());
                     }
                     else{
-                        return new JsonResult(marketsArray[marketsArray.Length-1].name);
+                        return new JsonResult(markets.Last().name);
                     }
                 default:
                     break;

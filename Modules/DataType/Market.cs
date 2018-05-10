@@ -10,7 +10,9 @@ namespace MatchingEngine.Modules.DataType
         [ProtoMember(3)]
         public string money {get;set;}
         [ProtoMember(4)]
-        public decimal min_price{get;set;}        
+        public decimal min_price{get;set;}     
+        [ProtoMember(5)]
+        public decimal fees {get;set;}   
 
     }
 

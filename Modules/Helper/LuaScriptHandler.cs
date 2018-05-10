@@ -1,4 +1,5 @@
 using StackExchange.Redis;
+using System;
 namespace MatchingEngine.Modules.Helper
 {
     public class LuaScriptHandler
@@ -28,9 +29,15 @@ namespace MatchingEngine.Modules.Helper
                                   " return result";
 
             var prepared = LuaScript.Prepare(Script);
-            RedisResult result = db.ScriptEvaluate(prepared);
-            //check result test
-
+            RedisResult result = db.ScriptEvaluate(prepared);            
+            string [] address = (string[])result;
+            queryTenBidAsk = address[0];
+            queryTenBidAskId = address[1];
+            cancelOrder = address[2];
+            placeBuyLimitedOrder = address[3];
+            placeSellLimitedOrder = address[4];
+            placeBuyMarketOrder = address[5];
+            placeSellMarketOrder = address[6];
         }
 
     }

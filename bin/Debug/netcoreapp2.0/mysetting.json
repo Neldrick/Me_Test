@@ -1,0 +1,8 @@
+{
+    "Redis":"127.0.0.1:6379",
+    "Kafka":"127.0.0.1:9092",
+    "Markets":[
+        {"name":"BTCUSD","stock":"USD","money":"BTC","min_price":0.5,"fees":0.00065},
+        {"name":"BTCETH","stock":"ETH","money":"BTC","min_price":0.1,"fees":0.00060}
+    ]
+}
